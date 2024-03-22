@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis</title>
+</head>
+<body>
+    <h1>Data Analysis</h1>
+
+    <h2>Records per Year</h2>
+    <ul>
+        {% for year, total in records.items() %}
+        <li>In {{ year }} {{ total }} were registered.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Shortest Name</h2>
+    <p>What is the shorter name in the dataset? {{ shortest_names }}</p>
+
+    <h2>Longest Name</h2>
+    <p>What is the largest name in the dataset? {{ longest_names }}</p>
+
+    <h2>Palindrome Names</h2>
+    <p>Is there a name in the database that is a Palindrome? {% if name_polindromes %}Yes {% for name in name_polindromes %}{{ name }} {% endfor %}{% else %}No{% endif %}</p>
+
+    <h2>Most Used Name</h2>
+    <p>What is the name with the largest number of people registered? {{ max_count_name }} with {{ max_count }} of people registered.</p>
+</body>
+</html>
